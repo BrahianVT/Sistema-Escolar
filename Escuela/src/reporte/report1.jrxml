@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isTitleNewPage="true" isSummaryNewPage="true">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<subDataset name="New Dataset 1"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     administradores.`idAdmin` AS administradores_idAdmin,
+     administradores.`Contrasenia` AS administradores_Contrasenia,
+     administradores.`Nombre` AS administradores_Nombre,
+     matricula.`m_ID` AS matricula_m_ID,
+     matricula.`m_gestion` AS matricula_m_gestion,
+     matricula.`m_fecha` AS matricula_m_fecha,
+     programacion.`p_matricula` AS programacion_p_matricula,
+     programacion.`p_univ` AS programacion_p_univ,
+     programacion.`p_materia` AS programacion_p_materia,
+     programacion.`p_grupo` AS programacion_p_grupo,
+     universitario.`u_cu` AS universitario_u_cu,
+     universitario.`u_ci` AS universitario_u_ci,
+     universitario.`u_nombre` AS universitario_u_nombre
+FROM
+     `administradores` administradores,
+     `matricula` matricula,
+     `programacion` programacion,
+     `universitario` universitario]]>
+	</queryString>
+	<field name="administradores_idAdmin" class="java.lang.Integer"/>
+	<field name="administradores_Contrasenia" class="java.lang.String"/>
+	<field name="administradores_Nombre" class="java.lang.String"/>
+	<field name="matricula_m_ID" class="java.lang.String"/>
+	<field name="matricula_m_gestion" class="java.lang.String"/>
+	<field name="matricula_m_fecha" class="java.sql.Timestamp"/>
+	<field name="programacion_p_matricula" class="java.lang.String"/>
+	<field name="programacion_p_univ" class="java.lang.String"/>
+	<field name="programacion_p_materia" class="java.lang.String"/>
+	<field name="programacion_p_grupo" class="java.lang.String"/>
+	<field name="universitario_u_cu" class="java.lang.String"/>
+	<field name="universitario_u_ci" class="java.lang.String"/>
+	<field name="universitario_u_nombre" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="136" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="164" height="126"/>
+				<imageExpression><![CDATA["coffee.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="170" y="0" width="263" height="62"/>
+				<textElement verticalAlignment="Middle">
+					<font pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Coffee Title]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="219" y="62" width="196" height="22"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Coffee SubTitle]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="172" y="94" width="383" height="42"/>
+				<textElement textAlignment="Right">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce auctor purus gravida arcu aliquam mattis. Donec et nulla libero, ut varius massa. Nulla sed turpis elit. Etiam aliquet mauris a ligula hendrerit in auctor leo lobortis.]]></text>
+			</staticText>
+			<image>
+				<reportElement x="433" y="-115" width="267" height="209"/>
+				<imageExpression><![CDATA["coffee_stain.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="0" width="42" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[administradores_idAdmin]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="42" y="0" width="42" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[administradores_Contrasenia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="84" y="0" width="42" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[administradores_Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="126" y="0" width="42" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[matricula_m_ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="168" y="0" width="42" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[matricula_m_gestion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="210" y="0" width="42" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[matricula_m_fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="252" y="0" width="42" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[programacion_p_matricula]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="294" y="0" width="42" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[programacion_p_univ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="336" y="0" width="42" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[programacion_p_materia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="378" y="0" width="42" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[programacion_p_grupo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="420" y="0" width="42" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[universitario_u_cu]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="462" y="0" width="42" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[universitario_u_ci]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="504" y="0" width="42" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[universitario_u_nombre]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="555" height="15"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="0" y="0" width="42" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{administradores_idAdmin}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="42" y="0" width="42" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{administradores_Contrasenia}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="84" y="0" width="42" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{administradores_Nombre}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="126" y="0" width="42" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{matricula_m_ID}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="168" y="0" width="42" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{matricula_m_gestion}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="210" y="0" width="42" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{matricula_m_fecha}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="252" y="0" width="42" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{programacion_p_matricula}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="294" y="0" width="42" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{programacion_p_univ}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="336" y="0" width="42" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{programacion_p_materia}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="378" y="0" width="42" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{programacion_p_grupo}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="420" y="0" width="42" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{universitario_u_cu}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="462" y="0" width="42" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{universitario_u_ci}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="504" y="0" width="42" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{universitario_u_nombre}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-21" y="1" width="597" height="24" forecolor="#D0B48E" backcolor="#F2EBDF"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="533" y="0" width="40" height="20" forecolor="#736343"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="453" y="0" width="80" height="20" forecolor="#736343"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="22" y="1" width="197" height="20" forecolor="#736343"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
